@@ -214,6 +214,7 @@
         padding: 5rem 0 2.5rem;
         background: url(../img/grainy-texture.png) repeat center center;
         position: relative;
+        z-index: 1000;
     }
 
     .section:before {
@@ -741,6 +742,7 @@
         top: 0;
         right: 0;
         left: 0;
+        z-index: -1;
     }
 
     .afeature .afeature-content {
