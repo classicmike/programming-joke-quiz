@@ -51,7 +51,6 @@
     }
 
 
-
 /* -----------------------------------
  *
  * 2. OVERRIDE BOOTSTRAP DEFAULTS
@@ -107,7 +106,7 @@
         color: #000;
     }
 
-    /** 2.4 Responsive Images **/
+    /** 2.3 Responsive Images **/
     .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
         display: inline-block;
     }
@@ -207,7 +206,7 @@
 
 /* -----------------------------------
  *
- * 7. SECTION
+ * 6. SECTION
  *
  * ----------------------------------- */
 
@@ -264,7 +263,7 @@
 
 /* -----------------------------------
  *
- * 8. BLOCK GRID EQUIVALENT FOUND IN FOUNDATION's BLOCK GRID
+ * 7. BLOCK GRID EQUIVALENT FOUND IN FOUNDATION's BLOCK GRID
  *
  * ----------------------------------- */
 
@@ -728,17 +727,11 @@
         }
     }
 
-/* -----------------------------------
- *
- * 9. SITE HEADER
- *
- * ----------------------------------- */
-
 
 
 /* -----------------------------------
  *
- * 9. AFEATURE
+ * 8. AFEATURE
  *
  * ----------------------------------- */
 
@@ -784,7 +777,7 @@
 
 /* -----------------------------------
  *
- * 1. GALLERY
+ * 9. GALLERY
  *
  * ----------------------------------- */
 
@@ -828,7 +821,7 @@
 
 /* -----------------------------------
  *
- * 1. OVERRIDES TO THE FUNNEL CONTAINER
+ * 10. OVERRIDES TO THE FUNNEL CONTAINER
  *
  * ----------------------------------- */
     #funnelFormContainer {
@@ -869,7 +862,7 @@
 
 /* -----------------------------------
  *
- * 10. SITE FOOTER
+ * 11. SITE FOOTER
  *
  * ----------------------------------- */
 
