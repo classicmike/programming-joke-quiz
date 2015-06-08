@@ -171,18 +171,17 @@
  * ----------------------------------- */
 
     .button {
-        background-color: #c8d532;
-        padding: 0.75rem 3rem;
-        border: 1px solid #c0d00b;
-        border-radius: 0.5rem;
-        text-transform: uppercase;
-        font-weight: 900;
-        cursor: pointer;
+        padding: 0.75rem;
+        background-color: #ffff3e;
+        font-family: "League Spartan", sans-serif;
+        font-size: 1.25rem;
+        border: none;
+        outline: 0 none;
     }
 
     .button:hover {
-        background-color: #c0d00b;
-        border: 1px solid #c8d532;
+        background-color: #000;
+        color: #fff;
     }
 
     .button.full {
@@ -206,6 +205,24 @@
 
 /* -----------------------------------
  *
+ * 5. Overrides (Helper classes to override existing css with important overrides to ensure that styles suit designs)
+ *
+ * ----------------------------------- */
+
+    .overrides-no-padding-top {
+        padding-top: 0 !important;
+    }
+
+    .overrides-no-padding-bottom {
+        padding-bottom: 0 !important;
+    }
+
+    .overrides-no-padding {
+        padding: 0 !important;
+    }
+
+/* -----------------------------------
+ *
  * 6. SECTION
  *
  * ----------------------------------- */
@@ -223,13 +240,18 @@
         height: 31.5px;
         width: 100%;
         left: 0;
-        top: -1.25rem;
+        top: 0;
         background-size: auto 31.5px;
         content: "";
     }
 
+    .section.section-no-tear:before {
+        display: none;
+        position: static;
+    }
+
     .section-header *:first-child:before {
-        content: "."
+        content: "#"
     }
 
     .section-header *:last-child:after {
@@ -250,9 +272,14 @@
         margin-left: 10px;
     }
 
+    .section-body-inner.section-body-inner-no-brace:after {
+        display: none;
+        content: "";
+    }
+
     @media screen and (min-width: 768px){
         .section {
-            padding: 4.125rem 0;
+            padding: 5rem 0 4.125rem;
         }
 
         .section-body:after {
@@ -737,37 +764,67 @@
  * ----------------------------------- */
 
     .afeature {
-        position: fixed;
         width: 100%;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: -1;
+        background: url(../img/grainy-texture.png) repeat center center;
     }
 
     .afeature .afeature-content {
-        background: url(../img/a-feature.jpg) no-repeat top center;
         background-size: cover;
-        height: 296px;
     }
 
-    body.afeature-paralax {
-        padding-top: 296px;
+    .afeature .afeature-content .afeature-content-inner > div {
+        margin: 0 auto 1.25rem;
+        float: none;
+        text-align: center;
     }
 
+    @media screen and (min-width: 768px){
+        .afeature {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
 
+    @media screen and (min-width: 768px) and (max-width: 959px){
+
+        .afeature .afeature-content {
+            height: 296px;
+        }
+
+        body.afeature-paralax {
+            padding-top: 296px;
+        }
+    }
 
     @media screen and (min-width: 960px){
         .afeature {
         }
 
         .afeature .afeature-content {
-            background: url(../img/a-feature.jpg) no-repeat center center;
-            height: 477px;
+            height: 230px;
+        }
+
+        .afeature .afeature-content .afeature-content-inner {
+            height: inherit;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .afeature .afeature-content .afeature-content-inner > div {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: left;
+            margin: 0;
+            float: left;
         }
 
         body.afeature-paralax {
-            padding-top: 477px;
+            padding-top: 230px;
         }
     }
 
