@@ -10,6 +10,7 @@
     <link href='//fonts.googleapis.com/css?family=Lato:400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/awesome-bootstrap-checkbox.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="//s3.amazonaws.com/funnelnow/uni-form/uni-form.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -46,7 +47,7 @@
             <div class="row">
                 <div class="col-xs-12 afeature-content">
                     <div class="row afeature-content-inner">
-                        <div class="col-xs-2 col-sm-3 col-md-2">
+                        <div class="col-xs-4 col-sm-3 col-md-2">
                             <img src="img/smiley-logo.png" alt="Happy Lists" class="img-responsive" />
                         </div>
                         <div class="col-xs-12 col-md-10">
@@ -101,6 +102,22 @@
             <div class="row">
                 <section class="section-body col-xs-12">
                     <div class="section-body-inner text-center">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-10 col-md-6 list-group list-group-large happy-list-items">
+
+                                <div class="list-group-item happy-list-item">
+                                    <div class="checkbox checkbox-circle">
+                                        <input type="checkbox" id="checkbox1">
+                                        <label for="checkbox1" class="h4 list-group-item-heading happy-list-item-heading">
+                                            Do my Front End Assignment
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="list-group-item happy-list-item active form-group">
+                                    <input type="text" placeholder="What happiness would you like to bring?" />
+                                </div>
+                            </div>
+                        </div>
                         <p class="lead h2 spacious-heading">Is that it? Why not add more happiness?</p>
                         <button class="button add-todo">(+) Add another task</button>
                     </div>

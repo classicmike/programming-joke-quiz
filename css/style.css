@@ -19,6 +19,7 @@
 
     * {
         margin-top: 0 !important;
+        outline: 0 none !important;
     }
     body,html {
         font-size: 12px !important;
@@ -48,6 +49,10 @@
             font-size: 16px !important;
         }
 
+    }
+
+    label {
+        cursor: pointer;
     }
 
 
@@ -110,6 +115,79 @@
     .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
         display: inline-block;
     }
+
+    .list-group {
+        margin-bottom: 4rem;
+    }
+    .list-group .list-group-item{
+        text-align: left;
+        margin-bottom: 1.25rem;
+        -webkit-box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
+        -moz-box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
+        box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
+    }
+
+    .list-group .list-group-item:last-child {
+        margin-bottom: 0;
+    }
+
+
+
+    .list-group.list-group-large .list-group-item {
+        padding: 2rem;
+    }
+
+    .list-group.list-group-large .list-group-item.active {
+        background-color: #ffff3e;
+        border-color: #ffff3e;
+        color: #000;
+    }
+
+    .list-group.list-group-large .list-group-item input[type="text"] {
+        width: 100%;
+        font-family: "League Spartan", sans-serif;
+        padding: 0.625rem;
+        display: none;
+    }
+
+    .list-group.list-group-large .list-group-item.active input[type="text"] {
+        display: block;
+    }
+
+    .list-group.list-group-large .list-group-item *:last-child {
+        margin-bottom: 0;
+    }
+
+    .list-group.list-group-large .list-group-item label {
+        font-size: 1.25rem;
+    }
+
+    .list-group.list-group-large .list-group-item .checkbox label {
+        padding-left: 10px;
+        line-height: 32px;
+    }
+
+    .list-group.list-group-large .list-group-item .checkbox label:before {
+        width: 32px;
+        height: 32px;
+        margin-left: -32px;
+    }
+
+    .list-group.list-group-large .list-group-item .checkbox label:after {
+        content: "";
+        margin-left: -32px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .list-group.list-group-large .list-group-item .checkbox input[type="checkbox"]:checked + label:after {
+        background: url(../img/smiley-tick.png) center center;
+        background-size: 32px 32px;
+    }
+
+
+
+
 
 
 
@@ -177,6 +255,11 @@
         font-size: 1.25rem;
         border: none;
         outline: 0 none;
+    }
+
+    .button.button-secondary {
+        background-color: #000;
+        color: #fff;
     }
 
     .button:hover {
@@ -917,6 +1000,23 @@
 
     #funnelFormContainer .fnl-processing {
         padding-left: 1.25rem;
+    }
+
+
+/* -----------------------------------
+ *
+ * 10. HAPPY LIST
+ *
+ * ----------------------------------- */
+
+    .happy-list {
+
+    }
+
+    .happy-list-items {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
     }
 
 /* -----------------------------------
