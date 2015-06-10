@@ -24,22 +24,23 @@
     /***--------- TODO LIST MODEL ------------ ***/
 
     todo.ToDoList = function(){
-        this.items = this.getAll();
+        this.items = this.retreiveFromLocalStorage();
     };
 
-
-    todo.ToDoList.prototype.saveAll = function(){
-        if(typeof localStorage !== 'undefined'){
-            localStorage.setItem(todo.ToDoItem.TODOLIST_LOCAL_STORAGE_KEY, JSON.stringify(this.items));
-        }
-    };
 
     todo.ToDoList.prototype.addItem = function(toDoItem){
       this.items.push(toDoItem);
     };
 
-    todo.ToDoList.prototype.getAll = function(){
-        if(localStorage.getItem(todo.ToDoItem.TODOLIST_LOCAL_STORAGE_KEY) === null){
+    todo.ToDoList.prototype.saveToLocalStorage = function(){
+        if(typeof localStorage !== 'undefined'){
+            localStorage.setItem(todo.ToDoItem.LOCAL_STORAGE_KEY, JSON.stringify(this.items));
+        }
+    };
+
+
+    todo.ToDoList.prototype.retreiveFromLocalStorage = function(){
+        if (localStorage.getItem(todo.ToDoItem.LOCAL_STORAGE_KEY) === null){
             return [];
         } else {
 
@@ -53,6 +54,7 @@
             return todoItems;
         }
     };
+    todo.ToDoItem.LOCAL_STORAGE_KEY = 'todo-list';
 
     /***--------- TODO LIST MODEL ------------ ***/
 
@@ -65,7 +67,7 @@
 
 
     todo.ToDoListController.prototype.updateTodoItemsInStorage = function(){
-        this.list.saveAll(this.list);
+        this.list.saveToLocalStorage();
     };
 
 
