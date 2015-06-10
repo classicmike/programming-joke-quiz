@@ -142,7 +142,8 @@
 
     todo.ToDoListView.prototype.onCheckboxChange = function(event){
         var $checkbox = $(event.target);
-        this.controller.updateTaskStatus(parseInt($checkbox.data(todo.ToDoItem.ID_DATA_ATTRIBUTE)));
+        var id = parseInt($checkbox.data(todo.ToDoItem.ID_DATA_ATTRIBUTE));
+        this.controller.updateTaskStatus(id);
     };
 
     todo.ToDoListView.prototype.displayList = function(){
