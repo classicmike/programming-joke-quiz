@@ -963,43 +963,13 @@
 
 /* -----------------------------------
  *
- * 10. OVERRIDES TO THE FUNNEL CONTAINER
+ * 10. Overrides to checkbox defaults
  *
  * ----------------------------------- */
-    #funnelFormContainer {
-
-    }
-
-    #funnelFormContainer legend,
-    #funnelFormContainer .fnl-intro{
-        display: none;
-    }
-
-    #funnelFormContainer .errorExplanation{
-        padding: 1.25rem;
-        background-color: #B52F40;
-    }
-
-    #funnelFormContainer .errorExplanation *{
-        color: #fff;
-    }
-
-    #funnelFormContainer .btn {
-        background-color: #ffff3e;
-        color: #000;
-        border: none;
-        font-size: 1.25rem;
-        border-radius: 0;
-        font-family: "League Spartan", sans-serif;
-    }
-
-    #funnelFormContainer .btn:hover {
-        background-color: #000;
-        color: #fff;
-    }
-
-    #funnelFormContainer .fnl-processing {
-        padding-left: 1.25rem;
+    .checkbox input[type="checkbox"]:checked + label,
+    .checkbox input[type="radio"]:checked + label {
+        text-decoration: line-through;
+        color: #ccc;
     }
 
 
@@ -1009,11 +979,8 @@
  *
  * ----------------------------------- */
 
-    .happy-list {
 
-    }
-
-    .happy-list-items {
+    #happy-list-items {
         margin-left: auto;
         margin-right: auto;
         float: none;
