@@ -36,8 +36,8 @@
     };
 
 
-    todo.ToDoList.prototype.addItem = function(toDoItem){
-        this.items.push(toDoItem);
+    todo.ToDoList.prototype.addItem = function(item){
+        this.items.push(item);
         this.saveToLocalStorage();
     };
 
@@ -104,18 +104,18 @@
         this.itemInput = $(todo.ToDoListView.ITEM_INPUT_SELECTOR);
         this.controller = controller;
         this.setEvents();
-        this.displayToDoList();
+        this.displayList();
     };
 
-    todo.ToDoListView.prototype.renderToDoItem = function(toDoItem){
+    todo.ToDoListView.prototype.renderItem = function(item){
 
-        var checkedAttribute = toDoItem.status === 1 ? ' checked="checked"': '';
+        var checkedAttribute = item.status === 1 ? ' checked="checked"': '';
 
         var $html = $('<div class="list-group-item happy-list-item">' +
             '<div class="checkbox checkbox-circle">' +
-                '<input type="checkbox" id="happy-list-item-check-' + toDoItem.id + '" data-todoid="' + toDoItem.id + '"' + checkedAttribute + '>' +
-                    '<label for="happy-list-item-check-' + toDoItem.id + '" class="h4 list-group-item-heading happy-list-item-heading">' +
-                    toDoItem.name +
+                '<input type="checkbox" id="happy-list-item-check-' + item.id + '" data-todoid="' + item.id + '"' + checkedAttribute + '>' +
+                    '<label for="happy-list-item-check-' + item.id + '" class="h4 list-group-item-heading happy-list-item-heading">' +
+                    item.name +
                     '</label>' +
                 '</div>' +
             '</div>');
@@ -144,7 +144,7 @@
         this.controller.updateTaskStatus(parseInt($checkbox.data(todo.ToDoItem.ID_DATA_ATTRIBUTE)));
     };
 
-    todo.ToDoListView.prototype.displayToDoList = function(){
+    todo.ToDoListView.prototype.displayList = function(){
         for(var i = 0; i < this.controller.list.items.length; i++){
             var item = this.controller.list.items[i];
             this.renderToDoItem(item);
@@ -162,9 +162,9 @@
                 return;
             }
 
-            var toDoItem = this.controller.addItem(name);
+            var item = this.controller.addItem(name);
 
-            this.renderToDoItem(toDoItem);
+            this.renderItem(item);
 
             $input.val('').blur();
         }
