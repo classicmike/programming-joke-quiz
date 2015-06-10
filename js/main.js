@@ -102,6 +102,7 @@
     todo.ToDoListView = function(controller){
         this.itemList = $(todo.ToDoListView.ITEM_LIST_SELECTOR);
         this.itemInput = $(todo.ToDoListView.ITEM_INPUT_SELECTOR);
+        this.addButton = $(todo.ToDoListView.ADD_BUTTON_SELECTOR);
         this.controller = controller;
         this.setEvents();
         this.displayList();
@@ -133,10 +134,10 @@
     };
 
     todo.ToDoListView.prototype.setEvents = function(){
-        $('body')
-            .on('change', '.happy-list-item input[type="checkbox"]', this.onCheckboxChange.bind(this))
-            .on('keyup', '.happy-list-item input[type="text"]', this.onTaskInputKeyUp.bind(this))
-            .on('click', '.add-happy-list-item', this.addHappyListItemClick.bind(this));
+        this.itemList.on('change', 'input[type="checkbox"]',
+                         this.onCheckboxChange.bind(this));
+        this.itemInput.on('keyup', this.onTaskInputKeyUp.bind(this));
+        this.addButton.on('click', this.onAddButtonClick.bind(this));
     };
 
     todo.ToDoListView.prototype.onCheckboxChange = function(event){
@@ -147,7 +148,7 @@
     todo.ToDoListView.prototype.displayList = function(){
         for(var i = 0; i < this.controller.list.items.length; i++){
             var item = this.controller.list.items[i];
-            this.renderToDoItem(item);
+            this.renderItem(item);
         }
     };
 
@@ -171,13 +172,15 @@
 
     };
 
-    todo.ToDoListView.prototype.addHappyListItemClick = function(event){
+    todo.ToDoListView.prototype.onAddButtonClick = function(event){
         event.preventDefault();
         this.scrollToCreateSelector();
     };
 
     todo.ToDoListView.ENTER_KEY_CODE = 13;
+    todo.ToDoListView.ITEM_LIST_SELECTOR = '#happy-list-items';
     todo.ToDoListView.ITEM_INPUT_SELECTOR = '#happy-list-create';
+    todo.ToDoListView.ADD_BUTTON_SELECTOR = '.add-happy-list-item';
 
     /***--------- TODO LIST VIEW ------------ ***/
 
