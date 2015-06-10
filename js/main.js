@@ -12,6 +12,14 @@
         todo.ToDoItem.id++;
     };
 
+    todo.ToDoItem.prototype.toggleStatus = function() {
+        if (this.status === todo.ToDoItem.STATUS_NOT_COMPLETE){
+            this.status = todo.ToDoItem.STATUS_COMPLETE;
+        } else {
+            this.status = todo.ToDoItem.STATUS_NOT_COMPLETE;
+        }
+    }
+
     todo.ToDoItem.id = 0;
 
     todo.ToDoItem.STATUS_NOT_COMPLETE =  0;
@@ -29,7 +37,14 @@
 
 
     todo.ToDoList.prototype.addItem = function(toDoItem){
-      this.items.push(toDoItem);
+        this.items.push(toDoItem);
+        this.saveToLocalStorage();
+    };
+
+    todo.ToDoList.prototype.toggleItemStatus = function(id) {
+        var item = this.items[id];
+        item.toggleStatus();
+        this.saveToLocalStorage();
     };
 
     todo.ToDoList.prototype.saveToLocalStorage = function(){
@@ -70,31 +85,14 @@
     };
 
 
-    todo.ToDoListController.prototype.updateTodoItemsInStorage = function(){
-        this.list.saveToLocalStorage();
-    };
-
-
     todo.ToDoListController.prototype.addItem = function(name){
         var item = new todo.ToDoItem(name);
         this.list.addItem(item);
-
-        this.updateTodoItemsInStorage();
-
         return item;
     };
 
     todo.ToDoListController.prototype.updateTaskStatus = function(id){
-        var todoItem = this.list.items[id];
-
-        //check the to do item
-        if(todoItem.status === todo.ToDoItem.STATUS_NOT_COMPLETE){
-            todoItem.status = todo.ToDoItem.STATUS_COMPLETE;
-        } else {
-            todoItem.status = todo.ToDoItem.STATUS_NOT_COMPLETE;
-        }
-
-        this.updateTodoItemsInStorage();
+        this.list.toggleItemStatus(id);
     }
 
     /***--------- TODO LIST CONTROLLER ------------ ***/
