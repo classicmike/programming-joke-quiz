@@ -102,7 +102,7 @@
     todo.ToDoListView = function(controller){
         this.itemList = $(todo.ToDoListView.ITEM_LIST_SELECTOR);
         this.itemInput = $(todo.ToDoListView.ITEM_INPUT_SELECTOR);
-        this.controller = controller || null;
+        this.controller = controller;
         this.setEvents();
         this.displayToDoList();
     };
