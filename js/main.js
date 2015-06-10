@@ -33,9 +33,12 @@
     };
 
     todo.ToDoList.prototype.saveToLocalStorage = function(){
-        if(typeof localStorage !== 'undefined'){
-            localStorage.setItem(todo.ToDoItem.LOCAL_STORAGE_KEY, JSON.stringify(this.items));
+        if (typeof localStorage === 'undefined') {
+            return;
         }
+
+        localStorage.setItem(todo.ToDoItem.LOCAL_STORAGE_KEY,
+                             JSON.stringify(this.items));
     };
 
 
@@ -157,14 +160,15 @@
         if(event.which === todo.ToDoListView.ENTER_KEY_CODE){
             var name = $input.val();
 
-            if(typeof name !== 'undefined' && typeof name === 'string' && name.replace(/ /g, '').length){
-                var toDoItem = this.controller.addItem(name);
-
-                this.renderToDoItem(toDoItem);
-
-                $input.val('').blur();
+            if (name.trim() == "") {
+                return;
             }
 
+            var toDoItem = this.controller.addItem(name);
+
+            this.renderToDoItem(toDoItem);
+
+            $input.val('').blur();
         }
 
     };
@@ -180,7 +184,7 @@
 
     /***--------- TODO LIST VIEW ------------ ***/
 
-    
+
 
 
     $(document).ready(function(){
