@@ -24,7 +24,7 @@
     /***--------- TODO LIST MODEL ------------ ***/
 
     todo.ToDoList = function(){
-        this.items = this.retreiveFromLocalStorage();
+        this.items = this.retreiveFromLocalStorage() || [];
     };
 
 
@@ -40,19 +40,20 @@
 
 
     todo.ToDoList.prototype.retreiveFromLocalStorage = function(){
-        if (localStorage.getItem(todo.ToDoItem.LOCAL_STORAGE_KEY) === null){
-            return [];
-        } else {
-
-            var todoItems = [];
-            var localStorageTodoItems = JSON.parse(localStorage.getItem(todo.ToDoItem.TODOLIST_LOCAL_STORAGE_KEY));
-
-            for(var i = 0; i < localStorageTodoItems.length; i++){
-                todoItems.push(new todo.ToDoItem(localStorageTodoItems[i].name, localStorageTodoItems[i].status));
-            }
-
-            return todoItems;
+        var storedItems = localStorage.getItem(todo.ToDoItem.LOCAL_STORAGE_KEY);
+        if (!storedItems) {
+            return null;
         }
+
+        storedItems = JSON.parse(storedItems);
+
+        var items = [];
+        for(var i = 0; i < storedItems.length; i++){
+            var item = storedItems[i];
+            items.push(new todo.ToDoItem(item.name, item.status));
+        }
+
+        return items;
     };
     todo.ToDoItem.LOCAL_STORAGE_KEY = 'todo-list';
 
