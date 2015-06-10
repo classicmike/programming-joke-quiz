@@ -100,8 +100,8 @@
     /***--------- TODO LIST VIEW ------------ ***/
 
     todo.ToDoListView = function(controller){
-        this.happyListsTopSelector = $('#' + todo.ToDoListView.HAPPY_LIST_ITEMS_ID);
-        this.happyListCreateSelector = this.happyListsTopSelector.find('#' + todo.ToDoListView.HAPPY_LIST_CREATE_ID);
+        this.itemList = $(todo.ToDoListView.ITEM_LIST_SELECTOR);
+        this.itemInput = $(todo.ToDoListView.ITEM_INPUT_SELECTOR);
         this.controller = controller || null;
         this.setEvents();
         this.displayToDoList();
@@ -120,12 +120,12 @@
                 '</div>' +
             '</div>');
 
-        $html.insertBefore(this.happyListCreateSelector);
+        $html.insertBefore(this.itemInput);
     };
 
     todo.ToDoListView.prototype.scrollToCreateSelector = function(){
-        this.scrollToPosition(this.happyListCreateSelector.offset().top);
-        this.happyListCreateSelector.find('input[type="text"]').val('').focus();
+        this.scrollToPosition(this.itemInput.offset().top);
+        this.itemInput.find('input[type="text"]').val('').focus();
     };
 
     todo.ToDoListView.prototype.scrollToPosition = function(position){
@@ -177,8 +177,7 @@
     };
 
     todo.ToDoListView.ENTER_KEY_CODE = 13;
-    todo.ToDoListView.HAPPY_LIST_CREATE_ID = 'happy-list-create';
-    todo.ToDoListView.HAPPY_LIST_ITEMS_ID = 'happy-list-items';
+    todo.ToDoListView.ITEM_INPUT_SELECTOR = '#happy-list-create';
 
     /***--------- TODO LIST VIEW ------------ ***/
 
