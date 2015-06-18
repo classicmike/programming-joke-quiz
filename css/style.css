@@ -116,6 +116,33 @@
         display: inline-block;
     }
 
+    /** 2.4 Grid **/
+    .col-centered {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /** 2.5 Alerts **/
+    .alert {
+        margin: 2.5rem;
+        -webkit-box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
+        -moz-box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
+        box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
+    }
+
+    .alert.alert-success {
+        color: #fff;
+        background-color: #4a7711;
+        border-color: #4a7711;
+    }
+
+    .alert.alert-danger {
+        color: #fff;
+        background-color: #B52F40;
+        border-color: #B52F40;
+    }
+
     .list-group {
         margin-bottom: 4rem;
     }
@@ -130,8 +157,6 @@
     .list-group .list-group-item:last-child {
         margin-bottom: 0;
     }
-
-
 
     .list-group.list-group-large .list-group-item {
         padding: 2rem;
@@ -160,6 +185,7 @@
 
     .list-group.list-group-large .list-group-item label {
         font-size: 1.25rem;
+        line-height: 1.5;
     }
 
     .list-group.list-group-large .list-group-item .checkbox label {
@@ -167,22 +193,20 @@
         line-height: 32px;
     }
 
-    .list-group.list-group-large .list-group-item .checkbox label:before {
-        width: 32px;
-        height: 32px;
-        margin-left: -32px;
+    .list-group.list-group-large .list-group-item .radio label:before,
+    .list-group.list-group-large .list-group-item .radio input[type="radio"] {
+        width: 22px;
+        height: 22px;
+        margin-left: -30px;
+        outline: none !important;
     }
 
-    .list-group.list-group-large .list-group-item .checkbox label:after {
-        content: "";
-        margin-left: -32px;
-        width: 32px;
-        height: 32px;
-    }
-
-    .list-group.list-group-large .list-group-item .checkbox input[type="checkbox"]:checked + label:after {
-        background: url(../img/smiley-tick.png) center center;
-        background-size: 32px 32px;
+    .list-group.list-group-large .list-group-item .radio label:after {
+        width: 12px;
+        height: 12px;
+        left: -5.5px;
+        top: 5px;
+        margin-left: -20px;
     }
 
 
@@ -917,73 +941,55 @@
         }
     }
 
-/* -----------------------------------
- *
- * 9. GALLERY
- *
- * ----------------------------------- */
-
-    .gallery {
-        margin-top: 2.5rem !important;
-    }
-    .gallery .gallery-img {
-        margin-bottom: 1.25rem;
-        -webkit-box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
-        -moz-box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
-        box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-        -webkit-filter: grayscale(1); -webkit-filter: grayscale(100%);
-        -webkit-filter: grayscale(100%);
-        filter: gray;
-        transition: 1s ease;
-    }
-
-    .gallery .gallery-img:hover {
-        filter: none;
-        -webkit-filter: none;
-    }
-
-    .gallery .gallery-caption {
-        padding: 0.75rem;
-        width: 100%;
-        background-color: #ffff3e;
-    }
-
-    .gallery .gallery-link:hover {
-        text-decoration: none;
-
-    }
-
-    .gallery .gallery-link:hover .gallery-caption {
-        background-color: #000;
-        color: #fff;
-    }
 
 
 /* -----------------------------------
  *
- * 10. Overrides to checkbox defaults
+ * 10. QUESTIONS AND ANSWERS
  *
  * ----------------------------------- */
-    .checkbox input[type="checkbox"]:checked + label,
-    .checkbox input[type="radio"]:checked + label {
-        text-decoration: line-through;
-        color: #ccc;
+    .questions-list {
+        margin-bottom: 0;
     }
 
+    .question-text {
+        margin-bottom: 2.5rem;
+    }
 
-/* -----------------------------------
- *
- * 10. HAPPY LIST
- *
- * ----------------------------------- */
-
-
-    #happy-list-items {
+    .answer-choices {
         margin-left: auto;
         margin-right: auto;
         float: none;
+    }
+
+    .answer-choice-item.answer-choice-item-correct {
+        background-color: #4a7711;
+        color: #fff;
+    }
+
+    .answer-choice-item.answer-choice-item-incorrect {
+        background-color: #B52F40;
+        color: #fff;
+    }
+
+/* -----------------------------------
+ *
+ * 10. QUESTIONS CORRECT INDICATOR
+ *
+ * ----------------------------------- */
+
+    .questions-correct-indicator {
+        background-color: #ffff3e;
+        border-color: #ffff3e;
+        color: #000;
+        -webkit-box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
+        -moz-box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
+        box-shadow: 4px 17px 22px -12px rgba(0,0,0,0.29);
+        padding: 1.25rem;
+    }
+
+    .questions-correct-indicator > *:last-child {
+        margin-bottom: 0
     }
 
 /* -----------------------------------

@@ -50,7 +50,7 @@
                             <img src="img/smiley-logo.png" alt="Happy Lists" class="img-responsive" />
                         </div>
                         <div class="col-xs-12 col-md-10">
-                            <h1>Happy Lists! <br /><small>The only happy task list manager you will ever need.</small></h1>
+                            <h1>Happy Quiz! <br /><small>The fun quiz that will test your geekiness!</small></h1>
                         </div>
                     </div>
                 </div>
@@ -61,15 +61,13 @@
         <div class="container">
             <div class="row">
                 <header class="col-xs-12 section-header">
-                    <h2 class="h1">introduction-and-how-to-use</h2>
+                    <h2 class="h1">introduction</h2>
                 </header>
             </div>
             <div class="row">
                 <section class="section-body col-sx-12">
                     <div class="section-body-inner">
-                        <p class="lead h2 spacious-heading">Tired of not getting things done? Here's a task list that would <span class="typography-highlight text-uppercase">put a smile</span> on your face!</p>
-                        <p class="hidden-xs hidden-sm">Add all you tasks on the list and once completed, <span class="typography-highlight text-uppercase">smack</span> that task complete
-                        and <span class="typography-highlight text-uppercase">Happiness!</span> All tasks complete will be marked with a <span class="text-highlight text-uppercase">Smiley Face</span> and you can give yourself a pat on the back!</p>
+                        <p class="lead h2 spacious-heading">How well do you know your technical? Prove your knowledge, take the quiz!</p>
                     </div>
                 </section>
             </div>
@@ -81,8 +79,10 @@
                 <section class="col-xs-12">
                     <div class="section-body-inner section-body-inner-no-brace overrides-no-padding-top">
                         <div class="row">
-                            <div class="col-xs-12">
-                                <button class="button add-happy-list-item">(+) Add to do Task</button>
+                            <div class="col-xs-6 col-md-4 col-centered">
+                                <div class="questions-correct-indicator text-center">
+                                    <p class="h3">Your score: 1/1</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -91,30 +91,63 @@
         </div>
     </div>
 
-    <div id="happy-list" class="section section-no-tear overrides-no-padding-top">
-        <div class="container">
-            <div class="row">
-                <header class="col-xs-12 section-header">
-                    <h2 class="h1">my-happy-list</h2>
-                </header>
-            </div>
-            <div class="row">
-                <section class="section-body col-xs-12">
-                    <div class="section-body-inner text-center">
-                        <div class="row">
-                            <div id="happy-list-items" class="col-xs-12 col-sm-10 col-md-6 list-group list-group-large">
-                                <div id="happy-list-create" class="list-group-item happy-list-item active form-group">
-                                    <input type="text" placeholder="What happiness would you like to bring?" />
+    <ul id="questions" class="list-unstyled questions-list">
+        <li class="section section-no-tear overrides-no-padding-top question">
+            <div class="container">
+                <div class="row">
+                    <header class="col-xs-12 section-header">
+                        <h2 class="h1">question 1</h2>
+                    </header>
+                </div>
+                <div class="row">
+                    <section class="section-body col-xs-12">
+                        <div class="section-body-inner text-center">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-11 col-centered">
+                                    <div class="alert alert-success alert-dismissible" role="alert">
+                                        You have answered the question correctly! Click 'Next' to see the next question! :)
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-11 col-centered">
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        Opps! You have incorrectly answered the question! Try again! :(
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="lead h2 spacious-heading question-text">How many programmers does it take to fix a light bulb?</p>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-10 col-md-6 list-group list-group-large answer-choices">
+                                    <div class="list-group-item answer-choice-item answer-choice-item-incorrect">
+                                        <div class="radio">
+                                            <input type="radio" id="answer-check-1-1" name="answer-check-1" value="Just me because I'm Awesome">
+                                            <label for="answer-check-1-1" class="h4 list-group-item-heading happy-list-item-heading">Just me because I'm Awesome</label>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item answer-choice-item">
+                                        <div class="radio">
+                                            <input type="radio" id="answer-check-1-2" name="answer-check-1">
+                                            <label for="answer-check-1-2" class="h4 list-group-item-heading happy-list-item-heading">None- It's a hardware problem</label>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item answer-choice-item answer-choice-item-correct">
+                                        <div class="radio">
+                                            <input type="radio" id="answer-check-1-3" name="answer-check-1">
+                                            <label for="answer-check-1-3" class="h4 list-group-item-heading happy-list-item-heading">Why ask me? Get an electrician to do it!</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button next-question">Next! &gt;</button>
                         </div>
-                        <p class="lead h2 spacious-heading">Is that it? Why not add more happiness?</p>
-                        <button class="button add-happy-list-item">(+) Add another task</button>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
-        </div>
-    </div>
+        </li>
+    </ul>
 
     <footer class="site-footer">
         <div class="container">
