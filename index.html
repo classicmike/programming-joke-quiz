@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Happy Tasks by Mike Tran! &lt;frontend&gt;&lt;&#47;developer&gt;</title>
+    <title>Happy Quiz by Mike Tran! &lt;frontend&gt;&lt;&#47;developer&gt;</title>
 
     <link href='//fonts.googleapis.com/css?family=Lato:400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <!-- Bootstrap -->
@@ -80,8 +80,8 @@
                     <div class="section-body-inner section-body-inner-no-brace overrides-no-padding-top">
                         <div class="row">
                             <div class="col-xs-6 col-md-4 col-centered">
-                                <div class="questions-correct-indicator text-center">
-                                    <p class="h3">Your score: 1/1</p>
+                                <div id="quiz-indicator" class="questions-correct-indicator text-center">
+                                    <p class="h4">Loading Quiz...</p>
                                 </div>
                             </div>
                         </div>
@@ -91,62 +91,8 @@
         </div>
     </div>
 
-    <ul id="questions" class="list-unstyled questions-list">
-        <li class="section section-no-tear overrides-no-padding-top question">
-            <div class="container">
-                <div class="row">
-                    <header class="col-xs-12 section-header">
-                        <h2 class="h1">question 1</h2>
-                    </header>
-                </div>
-                <div class="row">
-                    <section class="section-body col-xs-12">
-                        <div class="section-body-inner text-center">
-                            <div class="row">
-                                <div class="col-xs-12 col-md-11 col-centered">
-                                    <div class="alert alert-success alert-dismissible" role="alert">
-                                        You have answered the question correctly! Click 'Next' to see the next question! :)
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-md-11 col-centered">
-                                    <div class="alert alert-danger alert-dismissible" role="alert">
-                                        Opps! You have incorrectly answered the question! Try again! :(
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="lead h2 spacious-heading question-text">How many programmers does it take to fix a light bulb?</p>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-10 col-md-6 list-group list-group-large answer-choices">
-                                    <div class="list-group-item answer-choice-item answer-choice-item-incorrect">
-                                        <div class="radio">
-                                            <input type="radio" id="answer-check-1-1" name="answer-check-1" value="Just me because I'm Awesome">
-                                            <label for="answer-check-1-1" class="h4 list-group-item-heading happy-list-item-heading">Just me because I'm Awesome</label>
-                                        </div>
-                                    </div>
-                                    <div class="list-group-item answer-choice-item">
-                                        <div class="radio">
-                                            <input type="radio" id="answer-check-1-2" name="answer-check-1">
-                                            <label for="answer-check-1-2" class="h4 list-group-item-heading happy-list-item-heading">None- It's a hardware problem</label>
-                                        </div>
-                                    </div>
-                                    <div class="list-group-item answer-choice-item answer-choice-item-correct">
-                                        <div class="radio">
-                                            <input type="radio" id="answer-check-1-3" name="answer-check-1">
-                                            <label for="answer-check-1-3" class="h4 list-group-item-heading happy-list-item-heading">Why ask me? Get an electrician to do it!</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="button next-question">Next! &gt;</button>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </li>
+    <ul id="questions-list" class="list-unstyled questions-list">
+
     </ul>
 
     <footer class="site-footer">
@@ -161,7 +107,8 @@
     </footer>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/EventEmitter/4.2.11/EventEmitter.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>

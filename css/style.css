@@ -953,6 +953,30 @@
         margin-bottom: 0;
     }
 
+    .questions-list > .question-item {
+        display: none;
+    }
+
+    .questions-list > .question-item.active {
+        display: block;
+    }
+
+    .questions-list > .question-item .alert {
+        display: none;
+    }
+
+    .questions-list > .question-item .alert.active {
+        display: block;
+    }
+
+    .questions-list > .question-item .next-question {
+        display: none;
+    }
+
+    .questions-list > .question-item .next-question.active {
+        display: inline-block;
+    }
+
     .question-text {
         margin-bottom: 2.5rem;
     }

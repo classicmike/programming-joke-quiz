@@ -1,0 +1,172 @@
+[
+  {
+    "questionText": "How many programmers does it take to fix a light bulb?",
+    "answers": [
+      {
+        "answerText": "Just me because I'm Awesome",
+        "isCorrect": false
+      },
+      {
+        "answerText": "None - it's a hardware problem",
+        "isCorrect": true
+      },
+      {
+        "answerText": "Why ask me? Get an electrician to do it!",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "Why do Java developers wear glasses?",
+    "answers": [
+      {
+        "answerText": "Because it makes them smarter",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Because it makes them code faster",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Because they can't \"C#\"!",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "questionText": "What is the object oriented way of getting rich?",
+    "answers": [
+      {
+        "answerText": "Inheritance",
+        "isCorrect": true
+      },
+      {
+        "answerText": "Hack into a swiss bank account",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Create the next big Facebook app",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "Why is it that women find C more attractive to Java?",
+    "answers": [
+      {
+        "answerText": "Because C is awesome",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Because C doesn't treat them like objects",
+        "isCorrect": true
+      },
+      {
+        "answerText": "I don't know",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "Complete the followg line. \"There's no place like...\"",
+    "answers": [
+      {
+        "answerText": "Home",
+        "isCorrect": false
+      },
+      {
+        "answerText": "127.0.0.1",
+        "isCorrect": true
+      },
+      {
+        "answerText": "My Computer",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "An SQL query comes to a bar, walks up to the table and asks...",
+    "answers": [
+      {
+        "answerText": "Can I \"JOIN\" you?",
+        "isCorrect": true
+      },
+      {
+        "answerText": "I'm here to \"DROP\" you.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "I \"SELECT\" you.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "Complete the following sentence. [\"hip\", \"hip\"]...",
+    "answers": [
+      {
+        "answerText": "Hoorray!",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Boohooo!",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Array!",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "questionText": "How many PROLOG programmers does it take to fix a light bulb?",
+    "answers": [
+      {
+        "answerText": "Just me because I'm Awesome",
+        "isCorrect": false
+      },
+      {
+        "answerText": "0",
+        "isCorrect": true
+      },
+      {
+        "answerText": "Yes",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "questionText": "Why did the programmer quit her job?",
+    "answers": [
+      {
+        "answerText": "Beacuse it was stressful.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "Because she didn't get \"arrays\"!",
+        "isCorrect": true
+      },
+      {
+        "answerText": "She ended up not enjoying the job!",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionText": "What is the difference between a programmer and an old dog?",
+    "answers": [
+      {
+        "answerText": "You cannot teach an old dog new tricks.",
+        "isCorrect": false
+      },
+      {
+        "answerText": "I don't know",
+        "isCorrect": false
+      },
+      {
+        "answerText": "With a programmer you CAN teach an old dog new tricks!",
+        "isCorrect": true
+      }
+    ]
+  }
+]
