@@ -10,14 +10,6 @@
         return !isNaN(y) && x == y && x.toString() == y.toString();
     };
 
-    quiz.Utils.isBetween = function(intToCheck, x, y){
-        if(x && y && intToCheck && quiz.Utils.isInteger(x) && quiz.Utils.isInteger(y)
-            && quiz.Utils.isInteger(intToCheck)){
-            return intToCheck >= x && intToCheck <=y;
-        } else {
-            return false;
-        }
-    };
 
     /***--------- UTILS ------------ ***/
 
@@ -604,7 +596,7 @@
     };
 
 
-    quiz.QuizCompleteModalView.COMPLETE_MESSAGE = 'You have scored 4/4 for your quiz! Well done now you are an expert at Programming and Technical Matters!';
+    quiz.QuizCompleteModalView.COMPLETE_MESSAGE = 'You have scored 10/10 for your quiz! Well done now you are an expert at Programming and Technical Matters!';
     quiz.QuizCompleteModalView.COMPLETE_MODAL_ID = 'results-modal';
     /***--------- QUIZ COMPLETE MODAL VIEW ------------ ***/
 
