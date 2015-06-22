@@ -149,6 +149,7 @@
     /***--------- QUESTIONS LIST ------------ ***/
 
 
+
     /***--------- QUIZ CONTROLLER ------------ ***/
     quiz.QuizController = function(){
         this.setup();
@@ -178,6 +179,16 @@
             this.updateView();
         } else {
             this.questionsList.retrieveFromStorage();
+        }
+    };
+
+    quiz.QuizController.prototype.addScore = function(){
+        this.score++;
+    };
+
+    quiz.QuizController.prototype.subtractScore = function(){
+        if(this.score > 0 && this.score === this.questionIndex){
+            this.score--;
         }
     };
 
@@ -501,52 +512,37 @@
 
     quiz.QuizAnswerItemView.prototype.setEvents = function(){
         this.answerItemElement.find('input[type="radio"]')
-            .on('change', this.answerItemChanged.bind(this));
-    };
-
-
-
-    quiz.QuizAnswerItemView.prototype.answerItemChanged = function(event){
-        this.processAnswerChange(event);
+            .on('change', this.processAnswerChange.bind(this));
     };
 
     quiz.QuizAnswerItemView.prototype.processAnswerChange = function(event){
-        var inputElement = $(event.target);
-        var answerId =  inputElement.data(quiz.QuizAnswerItemView.ANSWER_ID_DATA_ATTRIBUTE);
+
+        var inputElement = $(event.target),
+            answerId =  inputElement.data(quiz.QuizAnswerItemView.ANSWER_ID_DATA_ATTRIBUTE);
 
         if(quiz.Utils.isInteger(answerId) && !inputElement){
             return;
         }
 
-        var currentQuestion = this.controller.questionIndex;
-        var question = this.controller.questionsList.getQuestionAtIndex(parseInt(currentQuestion-1));
+        var currentQuestion = this.controller.questionIndex,
+            question = this.controller.questionsList.getQuestionAtIndex(parseInt(currentQuestion-1));
 
 
         if(question.checkIfCorrect(answerId)){
+            this.controller.addScore();
             this.answerItemElement.addClass(quiz.QuizAnswerItemView.ANSWER_CORRECT_CLASS);
-            this.parentView.processUIForResult(quiz.QuizQuestionItemView.QUESTION_STATE_CORRECT);
-
-            //update the scores
-            this.controller.score++;
-            var quizIndicator = this.controller.view.quizIndicatorView;
-            quizIndicator.render();
-
         } else {
-
-            if(this.controller.score > 0){
-                this.controller.score--;
-            }
-
+            //to prevent scores from being negative
+            this.controller.subtractScore();
             this.answerItemElement.addClass(quiz.QuizAnswerItemView.ANSWER_INCORRECT_CLASS);
-            this.parentView.processUIForResult(quiz.QuizQuestionItemView.QUESTION_STATE_INCORRECT);
-            var quizIndicator = this.controller.view.quizIndicatorView;
-            quizIndicator.render();
         }
 
+        this.parentView.processUIForResult(quiz.QuizQuestionItemView.QUESTION_STATE_CORRECT);
+
+        var quizIndicator = this.controller.view.quizIndicatorView;
+        quizIndicator.render();
 
     };
-
-
 
     quiz.QuizAnswerItemView.ANSWER_ID_DATA_ATTRIBUTE = 'answer-id';
     quiz.QuizAnswerItemView.ANSWER_INCORRECT_CLASS = 'answer-choice-item-incorrect';
@@ -598,6 +594,7 @@
 
     quiz.QuizCompleteModalView.COMPLETE_MESSAGE = 'You have scored 10/10 for your quiz! Well done now you are an expert at Programming and Technical Matters!';
     quiz.QuizCompleteModalView.COMPLETE_MODAL_ID = 'results-modal';
+
     /***--------- QUIZ COMPLETE MODAL VIEW ------------ ***/
 
 
