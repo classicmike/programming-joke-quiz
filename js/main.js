@@ -434,9 +434,13 @@
 
     quiz.QuizQuestionItemView.prototype.processUIForResult = function(result){
 
+        console.log(result);
+
         if(!result){
             result = quiz.QuizQuestionItemView.QUESTION_STATE_DEFAULT;
         }
+
+
 
         switch(result){
             case quiz.QuizQuestionItemView.QUESTION_STATE_CORRECT:
@@ -528,16 +532,18 @@
             question = this.controller.questionsList.getQuestionAtIndex(parseInt(currentQuestion-1));
 
 
+
         if(question.checkIfCorrect(answerId)){
             this.controller.addScore();
             this.answerItemElement.addClass(quiz.QuizAnswerItemView.ANSWER_CORRECT_CLASS);
+            this.parentView.processUIForResult(quiz.QuizQuestionItemView.QUESTION_STATE_CORRECT);
         } else {
             //to prevent scores from being negative
             this.controller.subtractScore();
             this.answerItemElement.addClass(quiz.QuizAnswerItemView.ANSWER_INCORRECT_CLASS);
-        }
+            this.parentView.processUIForResult(quiz.QuizQuestionItemView.QUESTION_STATE_INCORRECT);
 
-        this.parentView.processUIForResult(quiz.QuizQuestionItemView.QUESTION_STATE_CORRECT);
+        }
 
         var quizIndicator = this.controller.view.quizIndicatorView;
         quizIndicator.render();
